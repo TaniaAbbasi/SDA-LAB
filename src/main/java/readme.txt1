@@ -1,0 +1,24 @@
+DESCRIPTION OF CODE 
+
+WITH PRINCIPLE:
+
+The given code follows the Low Coupling principle, which aims to reduce the dependency between different
+ classes to make the system more flexible and easier to maintain. In this code, the Order class depends on
+ the PaymentMethod interface rather than a concrete payment implementation like CreditCard. This 
+abstraction allows the Order class to interact with any payment method that implements the PaymentMethod 
+interface, making it loosely coupled. If new payment methods (such as PayPal or BankTransfer) are 
+introduced, the Order class does not need to be modified. This separation of concerns enhances code
+ reusability, makes future extensions easier, and reduces the risk of bugs when updating or adding new 
+functionality.
+
+WITHOUT PRINCIPLE :
+
+The provided code violates the Low Coupling principle because the Order class is tightly coupled to the 
+CreditCard class. This means that Order directly depends on a specific payment method (CreditCard) instead
+ of an abstraction like an interface. As a result, if you want to add new payment methods (e.g., PayPal 
+or BankTransfer), you would need to modify the Order class, making it harder to extend and maintain. 
+This tight coupling reduces flexibility, as any change in the CreditCard class could affect the Order
+ class. Additionally, testing becomes more difficult because the Order class cannot work with mock or 
+alternative payment implementations without significant changes.
+
+
